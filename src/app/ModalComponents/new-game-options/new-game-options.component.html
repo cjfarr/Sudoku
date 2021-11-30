@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="custom-control custom-radio">
+                <input type="radio"
+                       class="custom-control-input"
+                       id="EasyGameOption"
+                       name="DifficultyOptionsGroup"
+                       (change)="OnDifficultyChanged('Easy')"
+                       checked />
+                <label class="custom-control-label" for="EasyGameOption">Easy</label>
+            </div>
+        </div>
+        <div class="col-md-4 col-offset-8">
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="checkbox" 
+                       (change)="OnAutoNotesChanged($event)"
+                       id="autoFillNotesOption">
+                <label class="form-check-label" for="autoFillNotesOption">
+                  Auto fill notes
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="custom-control custom-radio">
+                <input type="radio"
+                       class="custom-control-input"
+                       id="MediumGameOption"
+                       name="DifficultyOptionsGroup"
+                       (change)="OnDifficultyChanged('Medium')" />
+                <label class="custom-control-label" for="MediumGameOption">Medium</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="custom-control custom-radio">
+                <input type="radio"
+                       class="custom-control-input"
+                       id="HardGameOption"
+                       name="DifficultyOptionsGroup"
+                       (change)="OnDifficultyChanged('Hard')" />
+                <label class="custom-control-label" for="HardGameOption">Hard</label>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-right">
+        <div class="col align-items-right">
+            <button class="btn btn-primary" 
+                    style="float: right;"
+                    (click)="OnStartNewGame()">
+                Start new game
+            </button>
+        </div>
+    </div>
+</div>

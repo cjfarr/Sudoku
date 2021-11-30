@@ -1,0 +1,44 @@
+<div class="container" style="width: 800px; margin-top: 5px;">
+    <div class="row justify-content-center">
+        <div class="col p-0" 
+             *ngFor="let button of ButtonCount">
+             <input-button [InputNumber]="button"></input-button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-success MenuButton"
+                    (click)="GetCurrentContext() === 'GameOver' ? OnPlayAgain() : OnAttemptSolve()">
+                <span class="check"></span>
+                <h2 style="margin-top: 2px;"
+                    [innerText]="GetCurrentContext() === 'GameOver' ? 'Play again' : 'Solve'"></h2>
+            </button>
+        </div>
+        <div class="col-md-4">
+            <button [class]="GetCurrentContext() === 'Input' ? 'btn-secondary MenuButton' : 'btn btn-primary MenuButton'"
+                    [disabled]="GetCurrentContext() === 'GameOver'"
+                    (click)="OnContextChanged()">
+                <h2 style="margin-top: 2px;"
+                    [innerText]="GetCurrentContext() === 'Input' ? 'Notes' : 'Fill in'"></h2>
+            </button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-danger MenuButton"
+                    [disabled]="IsViewingErrors || !CanViewErrors || GetCurrentContext() === 'GameOver'"
+                    (click)="OnToggleError()"
+                    data-toggle="tooltip"
+                    title="Error viewings left: {{ GetErrorViewingsLeft() }}">
+                <progress-pie *ngIf="IsViewingErrors else showErrorLabel"
+                              ViewBoxSize="40"
+                              Radius="10"
+                              Color="white"
+                              [Progress]="ErrorTimerProgress">
+                </progress-pie>
+                <ng-template #showErrorLabel>
+                    <p style="float: right; margin-top: -5px;">{{ GetErrorViewingsLeft() }}</p>
+                    <h2 style="margin-top: 2px;">Show Errors</h2>
+                </ng-template>
+            </button>
+        </div>
+    </div>
+</div>

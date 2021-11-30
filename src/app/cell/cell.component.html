@@ -1,0 +1,16 @@
+
+<div class="CellContainer" 
+     (click)="OnClickEvent()" 
+     [ngStyle]="{ 'background-color': Background, 'color': Foreground }">
+    <div class="NotesContainer CellContainer" *ngIf="!IsSolved; else solvedContainer">
+        <div *ngFor="let note of Notes">
+            <p class="Note NoSelect">{{ note }}</p>
+        </div>
+    </div>
+    <ng-template #solvedContainer>
+        <div class="DisplayValueContainer CellContainer"
+             [style]="ShowError && InError ? 'background-color: #DC3545; color:white;' : ''">
+            <h2 class="DisplayValue NoSelect">{{ DisplayValue }}</h2>
+        </div>
+    </ng-template>
+</div>

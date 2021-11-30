@@ -1,0 +1,12 @@
+<svg class="ProgressPie"
+    [style.viewbox]="'0, 0, ' + ViewBoxSize + ', ' + ViewBoxSize + ''" 
+    [style.width]="ViewBoxSize" 
+    [style.height]="ViewBoxSize">
+    <circle fill="transparent"
+            [style.r]="Radius"
+            [style.cx]="ViewBoxSize * .5"
+            [style.cy]="ViewBoxSize * .5"
+            [style.stroke]="Color"
+            [style.stroke-width]="Radius * 2"
+            [style.stroke-dasharray]="GetProgressCircumference() + ', ' + Circumference" />
+</svg>

@@ -1,0 +1,54 @@
+.CellContainer
+{
+    width: 70px;
+    height: 70px;
+    display: flex;
+}
+
+.NotesContainer
+{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.NotesContainer > div
+{
+    text-align: center;
+}
+
+.DisplayValueContainer
+{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 30% 40% 30%;
+}
+
+.DisplayValue
+{
+    text-align: center;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.Note
+{
+    margin-top: 2px;
+    color: darkgray;
+}
+
+@media screen and (max-width: 600px)
+{
+    .CellContainer
+    {
+        width: 45px;
+        height: 45px;
+        display: flex;
+    }
+
+    .Note
+    {
+        margin-top: 0px;
+        font-size: small;
+    }
+}

@@ -1,0 +1,26 @@
+.BoardContainer
+{
+    display: grid;
+    background-color: darkgray;
+    grid-template-columns: 224px 224px 224px;
+    grid-template-rows: 224px 224px 224px;
+    width: 690;
+    height: 690;
+    padding: 5px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px)
+{
+    .BoardContainer
+    {
+        grid-template-columns: 140px 140px 140px;
+        grid-template-rows: 140px 140px 140px;
+        width: 422px;
+        height: 422px;
+        padding: 2px;
+        margin-top: 3px;
+    }
+}
