@@ -15,9 +15,11 @@ export class InputButtonComponent implements OnInit
     @Input("InputNumber") InputNumber: number;
 
     MissingCount: number;
+    CurrentContext: SudokuContext;
 
     private newBoardChangesSubscription: Subscription;
     private inputGivenSubscription: Subscription;
+    private contextChangedSubscription: Subscription;
 
     constructor(private sudokuService: SudokuService) 
     {
@@ -28,6 +30,11 @@ export class InputButtonComponent implements OnInit
     {
         this.UpdateMissingCount();
         this.newBoardChangesSubscription = this.sudokuService.SubscribeToNewBoardChanges(this.UpdateMissingCount.bind(this));
+        this.contextChangedSubscription = this.sudokuService.SubscribeToContextChanged(((c: SudokuContext) =>
+        {
+            this.CurrentContext = c;
+        }).bind(this));
+
         this.inputGivenSubscription = this.sudokuService.SubscribeToInputGivenEvent(((n) =>
         {
             this.UpdateMissingCount();
@@ -37,11 +44,6 @@ export class InputButtonComponent implements OnInit
     OnInputClick()
     {
         this.sudokuService.GiveInput(this.InputNumber);
-    }
-
-    public GetCurrentContext() : SudokuContext
-    {
-        return this.sudokuService.GetCurrentContext();
     }
 
     private UpdateMissingCount() : void
@@ -56,5 +58,6 @@ export class InputButtonComponent implements OnInit
     {
         this.newBoardChangesSubscription.unsubscribe();
         this.inputGivenSubscription.unsubscribe();
+        this.contextChangedSubscription.unsubscribe();
     }
 }
