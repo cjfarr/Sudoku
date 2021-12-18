@@ -1,7 +1,7 @@
 <button [class]="CurrentContext.toString() === 'Input' ? 'btn btn-primary InputButton' : 'btn-secondary InputButton'"
         [disabled]="CurrentContext.toString() === 'GameOver'"
         (click)="OnInputClick()">
-    <p style="margin-top: -10px; margin-right: -5px; float: right; text-align: right;"
+    <p class="MissingCount"
        *ngIf="CurrentContext.toString() === 'Input'">{{ MissingCount }}</p>
     <h1 style="margin-top: 0px;">{{ InputNumber }}</h1>
 </button>

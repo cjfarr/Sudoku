@@ -12,14 +12,14 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 375px)
 {
     .BoardContainer
     {
-        grid-template-columns: 140px 140px 140px;
-        grid-template-rows: 140px 140px 140px;
-        width: 422px;
-        height: 422px;
+        grid-template-columns: 120px 120px 120px;
+        grid-template-rows: 120px 120px 120px;
+        width: 365px;
+        height: 365px;
         padding: 2px;
         margin-top: 3px;
     }

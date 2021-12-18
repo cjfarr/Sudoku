@@ -78,8 +78,7 @@ export class CellComponent implements OnInit, OnDestroy
         {
             this.Notes[index] = "";
         }
-
-        console.log("Using auto notes " + this.sudokuService.IsUsingAutoNotes.toString());
+        
         if (this.sudokuService.IsUsingAutoNotes && 
             !this.IsSolved && 
             this.sudokuService.GetCurrentDifficulty() !== DifficultyType.Empty)

@@ -3,3 +3,12 @@ input[type=radio]
     transform:scale(2);
     margin: 15px;
 }
+
+@media screen and (max-width: 375px)
+{
+    input[type=radio]
+    {
+        transform:scale(1.2);
+        margin: 5px;
+    }
+}

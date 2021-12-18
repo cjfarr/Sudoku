@@ -37,18 +37,32 @@
     color: darkgray;
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 375px)
 {
     .CellContainer
     {
-        width: 45px;
-        height: 45px;
+        width: 37px;
+        height: 37px;
         display: flex;
     }
 
     .Note
     {
         margin-top: 0px;
-        font-size: small;
+        font-size:10px;
+    }
+
+    .NotesContainer
+    {
+        display: grid;
+        grid-template-columns: 12px 12px 12px;
+        grid-template-rows: 12px 12px 12px;
+    }
+
+    .DisplayValueContainer
+    {
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 10% 80% 10%;
     }
 }

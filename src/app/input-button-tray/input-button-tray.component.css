@@ -4,3 +4,54 @@
     width: 225px;
     margin: 4px;
 }
+
+.FullTrayWrapper
+{
+    width: 800px; 
+    margin-top: 5px;
+}
+
+.MenuButtonWrapper
+{
+    padding: 12px;
+}
+
+.ErrorViewingsCount
+{
+    float: right; 
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+@media screen and (max-width: 375px)
+{
+    .MenuButton
+    {
+        height: 50px;
+        width: 110px;
+        margin: 1px;
+    }
+
+    .FullTrayWrapper
+    {
+        width: 375px;
+        margin-top: 3px;
+    }
+
+    .MenuButtonWrapper
+    {
+        padding: 0px;
+        max-width: 120px;
+    }
+
+    h2
+    {
+        font-size: medium;
+    }
+
+    .ErrorViewingsCount
+    {
+        font-size: x-small;
+        margin-right: 2px;
+    }
+}

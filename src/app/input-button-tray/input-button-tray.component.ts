@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SudokuContext } from '../Constants/Enums';
 import { SimpleMessageArgs } from '../ModalComponents/simple-message/SimpleMessageArgs';
@@ -20,6 +20,8 @@ export class InputButtonTrayComponent implements OnInit
     ErrorTimerProgress: number;
     IsViewingErrors: boolean;
     CanViewErrors: boolean;
+    ErrorProgressViewBoxSize: number;
+    ErrorProgressRadius: number;
 
     private errorInterval;
     private errorTick: number;
@@ -33,6 +35,10 @@ export class InputButtonTrayComponent implements OnInit
         this.errorTick = 0;
         this.IsViewingErrors = false;
         this.CanViewErrors = true;
+
+        this.ErrorProgressViewBoxSize = 40;
+        this.ErrorProgressRadius = 10;
+        this.OnScreenSizeChanged();
     }
 
     ngOnInit(): void 
@@ -113,6 +119,17 @@ export class InputButtonTrayComponent implements OnInit
             }
         },
         50);
+    }
+
+    @HostListener('window:resize', ['$event'])
+    OnScreenSizeChanged(event?)
+    {
+        console.log("Got window width: " + window.innerWidth.toString());
+        if (window.innerWidth <= 375)
+        {
+            this.ErrorProgressRadius = 8;
+            this.ErrorProgressViewBoxSize = 32;
+        }
     }
 
     public GetCurrentContext() : string
