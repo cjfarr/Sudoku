@@ -12,3 +12,12 @@ input[type=radio]
         margin: 5px;
     }
 }
+
+@media screen and (max-width: 463px)
+{
+    input[type=radio]
+    {
+        transform:scale(1.2);
+        margin: 5px;
+    }
+}

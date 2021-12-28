@@ -1,8 +1,8 @@
 .MenuButton
 {
-    height: 75px;
+    height: 70px;
     width: 225px;
-    margin: 4px;
+    margin: 2px;
 }
 
 .FullTrayWrapper
@@ -13,7 +13,7 @@
 
 .MenuButtonWrapper
 {
-    padding: 12px;
+    padding: 10px;
 }
 
 .ErrorViewingsCount
@@ -42,6 +42,39 @@
     {
         padding: 0px;
         max-width: 120px;
+    }
+
+    h2
+    {
+        font-size: medium;
+    }
+
+    .ErrorViewingsCount
+    {
+        font-size: x-small;
+        margin-right: 2px;
+    }
+}
+
+@media screen and (max-width: 463px)
+{
+    .MenuButton
+    {
+        height: 50px;
+        width: 130px;
+        margin: 1px;
+    }
+
+    .FullTrayWrapper
+    {
+        width: 455px;
+        margin-top: 3px;
+    }
+
+    .MenuButtonWrapper
+    {
+        padding: 0px;
+        max-width: 140px;
     }
 
     h2

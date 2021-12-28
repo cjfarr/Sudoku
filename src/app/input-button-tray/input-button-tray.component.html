@@ -5,8 +5,8 @@
              <input-button [InputNumber]="button"></input-button>
         </div>
     </div>
-    <div class="row">
-        <div class="col col-md-4 MenuButtonWrapper">
+    <div class="row justify-content-center">
+        <div class="col col-md-4 justify-content-center MenuButtonWrapper">
             <button class="btn btn-success MenuButton"
                     (click)="GetCurrentContext() === 'GameOver' ? OnPlayAgain() : OnAttemptSolve()">
                 <span class="check"></span>
@@ -14,7 +14,7 @@
                     [innerText]="GetCurrentContext() === 'GameOver' ? 'Play again' : 'Solve'"></h2>
             </button>
         </div>
-        <div class="col col-md-4 MenuButtonWrapper">
+        <div class="col col-md-4 justify-content-center MenuButtonWrapper">
             <button [class]="GetCurrentContext() === 'Input' ? 'btn-secondary MenuButton' : 'btn btn-primary MenuButton'"
                     [disabled]="GetCurrentContext() === 'GameOver'"
                     (click)="OnContextChanged()">
@@ -22,7 +22,7 @@
                     [innerText]="GetCurrentContext() === 'Input' ? 'Notes' : 'Fill in'"></h2>
             </button>
         </div>
-        <div class="col col-md-4 MenuButtonWrapper">
+        <div class="col col-md-4 justify-content-center MenuButtonWrapper">
             <button class="btn btn-danger MenuButton"
                     [disabled]="IsViewingErrors || !CanViewErrors || GetCurrentContext() === 'GameOver'"
                     (click)="OnToggleError()"
